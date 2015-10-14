@@ -1,0 +1,31 @@
+<% if !flash[:notice].blank? %>
+    <div class="alert alert-info">
+      <p id="notice"><%= notice %></p>
+    </div>
+<% end %>
+<br>
+<h2 class="top">Results List</h2>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Course</th>
+    <th>Name</th>
+    <th>Description</th>
+    <th>Download</th>
+    <th><Action>Details</Action></th>
+  </tr>
+  </thead>
+  <tbody style="vertical-align:middle;">
+  <% @results.each do |result| %>
+      <tr>
+        <td width="8%"><span class="label label-info btn-circle btn-xl small"><i>M.TECH</i></span></td>
+        <td width="21%"><%= truncate_middle(result.name,length:50) %></td>
+        <td width="55%"><%= truncate_middle(result.description,length: 255) %></td>
+        <td width="8%"><%= link_to "Download", result.attachment_url %></td>
+        <td width="8%"><%= link_to 'Show', result %></td>
+        </td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+<br>

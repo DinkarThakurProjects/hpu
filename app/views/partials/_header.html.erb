@@ -1,0 +1,17 @@
+<div class="banner2">
+  <div class="header">
+    <div class="logo">
+      <a href="/"><%= image_tag('logo.jpg')  %></a>
+    </div>
+    <%=render partial: 'partials/navigation'%>
+    <!-- script-for-menu -->
+    <script>
+        $("span.menu").click(function () {
+            $("ul.navig").slideToggle("slow", function () {
+            });
+        });
+    </script>
+    <!-- script-for-menu -->
+    <div class="clearfix"></div>
+  </div>
+</div>

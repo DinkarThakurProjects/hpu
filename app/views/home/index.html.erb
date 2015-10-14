@@ -1,0 +1,225 @@
+<%# <%=javascript_include_tag 'responsiveslides.min', "data-turbolinks-track" => true %> <%#<script src= "js/responsiveslides.min.js"></script> %>
+<script>
+    $(function () {
+        $("#slider").responsiveSlides({
+            auto: true,
+            nav: true,
+            speed: 500,
+            namespace: "callbacks",
+            pager: true,
+        });
+    });
+</script>
+
+<div class="banner">
+  <div class="header">
+    <div class="logo">
+      <a href="/">
+        <%# <img src="/assests/logo.jpg" alt=""/>%>
+        <%= image_tag('logo.jpg') %>
+      </a>
+    </div>
+    <%= render 'partials/navigation' %>
+    <!-- script-for-menu -->
+    <script>
+        $("span.menu").click(function () {
+            $("ul.navig").slideToggle("slow", function () {
+            });
+        });
+    </script>
+    <!-- script-for-menu -->
+
+    <div class="clearfix"></div>
+  </div>
+  <div class="slider">
+    <div class="caption">
+      <div class="container">
+        <div class="callbacks_container">
+          <ul class="rslides" id="slider">
+            <li><h3>Nurturing the students of yesterday into resolute builders of the future</h3></li>
+            <li><h3>To make the forthcoming generations aware of computer education</h3></li>
+            <li><h3>Impart technical as well as interpersonal skills to the students.</h3></li>
+          </ul>
+          <div class="clearfix"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="banner-grids">
+    <div class="container">
+      <div class="col-md-4 banner-grid">
+        <h3>Blog Feed</h3>
+
+        <div class="banner-grid-sec">
+          <div class="grid_info">
+            <div class="blg-pic">
+              <span class="label label-primary btn-circle btn-xl"><i>M.TECH</i></span>
+            </div>
+            <div class="blg-pic-info">
+              <h4><a href="#">Vivamus tempus ligula</a></h4>
+
+              <p>Aliquam sem velit, rhoncus sed arcu at curabitur et erat eu viverra.</p>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+          <div class="grid_info">
+            <div class="blg-pic">
+              <span class="label label-info btn-circle btn-xl"><i>M.TECH</i></span>
+            </div>
+            <div class="blg-pic-info">
+              <h4><a href="#">Vivamus tempus ligula</a></h4>
+
+              <p>Aliquam sem velit, rhoncus sed arcu at curabitur et erat eu viverra.</p>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+
+          <div class="more">
+            <a href="blog.html">See more from the Blog ></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 banner-grid">
+        <h3>Entrance
+          <Results></Results>
+        </h3>
+
+        <div class="banner-grid-sec">
+          <%= render partial: "partials/results", collection: Result.order("updated_at desc").limit(4) %>
+        </div>
+      </div>
+      <div class="col-md-4 banner-grid">
+        <h3>News Letter</h3>
+
+        <div class="banner-grid-sec news_sec">
+          <div class="news-ltr">
+            <h4><a href="#">Pellentesque sed arcu lacinia</a></h4>
+
+            <p>Aliquam sem velit, rhoncus sed arcu eu viverra. Suspendisse lacus posuere ultricies turpis.</p>
+          </div>
+          <form>
+            <input type="text" placeholder="Email Address*" required="">
+            <input type="submit" value="SEND">
+          </form>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</div>
+<!---->
+<div class="welcome">
+  <div class="container">
+    <h2>To produce computer professionals who can face the challenges of IT Industry.</h2>
+
+    <div class="welcm_sec">
+      <div class="col-md-9 campus">
+        <div class="campus_head">
+          <h3>Welcome</h3>
+
+          <p class="text-justify">Setup in 1988-89, the Department of Computer Science, Himachal Pradesh University is
+            one of the most
+            reputed and prolific departments in the University today. It aims at the development of technical skills of
+            the students, thus producing highly qualified computer professionals. The Department boasts of efficient
+            faculty, proper infrastructure and a high-tech laboratory. Proper training facilities and industrial tours
+            are also arranged which contribute to moulding the students' career.</p>
+        </div>
+        <div class="col-md-4 wel_grid">
+          <img src="assets/w1.jpg" class="img-responsive" alt=""/>
+          <h5><a href="#">Master of Computer Applications (M.C.A.)</a></h5>
+        </div>
+        <div class="col-md-4 wel_grid">
+          <img src="assets/w2.jpg" class="img-responsive" alt=""/>
+          <h5><a href="#">Master of Technology (M. Tech.)</a></h5>
+        </div>
+        <div class="col-md-4 wel_grid">
+          <img src="assets/w4.jpg" class="img-responsive" alt=""/>
+          <h5><a href="#">Doctor of Philosophy (Ph. D.)</a></h5>
+        </div>
+        <!--<div class="clearfix"></div>-->
+        <!--<div class="more_info">-->
+        <!--<a href="blog.html">More Info....</a>-->
+        <!--</div>-->
+      </div>
+      <div class="col-md-3 testimonal">
+        <h3>Testimonials</h3>
+
+        <div class="testimnl-grid">
+          <a href="#">
+            <p>Aenean ultrices commodo risus, id sollicitudin nunc commodo at. Sed sagittis, lacus id viverra eleifend,
+              enim magna.</p></a>
+          <h5>John.Mr</h5>
+        </div>
+        <div class="testimnl-grid">
+          <a href="#">
+            <p>Aenean ultrices commodo risus, id sollicitudin nunc commodo at. Sed sagittis, lacus id viverra eleifend,
+              enim magna.</p></a>
+          <h5>John.Mr</h5>
+        </div>
+        <div class="testimnl-grid">
+          <a href="#">
+            <p>Aenean ultrices commodo risus, id sollicitudin nunc commodo at. Sed sagittis, lacus id viverra eleifend,
+              enim magna.</p></a>
+          <h5>John.Mr</h5>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</div>
+<!---->
+<div class="news">
+  <div class="container">
+    <h3>Top News</h3>
+
+    <div class="event-grids">
+      <marquee>
+        <div class="documentList">
+          <div class="col-md-4 event-grid">
+            <div class="date">
+              <h4>26</h4>
+              <span>08/2012</span>
+            </div>
+            <div class="event-info">
+              <h5><a href="#">Etiam malesuada feugiat rutrum purus quis vulputate.</a></h5>
+
+              <p>Praesent sagittis in enim vel cursus. Aenean velit ante, maximus ac placerat at,
+                volutpat et orci. Aliquam eu tellus orci.</p>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+          <div class="col-md-4 event-grid">
+            <div class="date">
+              <h4>24</h4>
+              <span>06/2012</span>
+            </div>
+            <div class="event-info">
+              <h5><a href="#">Etiam malesuada feugiat rutrum purus quis vulputate.</a></h5>
+
+              <p>Praesent sagittis in enim vel cursus. Aenean velit ante, maximus ac placerat at,
+                volutpat et orci. Aliquam eu tellus orci.</p>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+          <div class="col-md-4 event-grid">
+            <div class="date">
+              <h4>20</h4>
+              <span>04/2012</span>
+            </div>
+            <div class="event-info">
+              <h5><a href="#">Etiam malesuada feugiat rutrum purus quis vulputate.</a></h5>
+
+              <p>Praesent sagittis in enim vel cursus. Aenean velit ante, maximus ac placerat at,
+                volutpat et orci. Aliquam eu tellus orci.</p>
+            </div>
+            <div class="clearfix"></div>
+          </div>
+          <div class="clearfix"></div>
+        </div>
+      </marquee>
+    </div>
+
+  </div>
+</div>
+<!---->
+<%= render 'partials/footer' %>
