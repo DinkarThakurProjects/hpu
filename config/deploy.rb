@@ -8,7 +8,7 @@ set :repo_url, 'git@bitbucket.org:dinkarthakur/hpu.git'
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
 # Default deploy_to directory is /var/www/my_app_name
- set :deploy_to, '/home/hpu/deployment/ruby/'
+ set :deploy_to, '/home/hpu/deployment/ruby/hpu'
 
 # Default value for :scm is :git
 # set :scm, :git
@@ -17,7 +17,7 @@ set :repo_url, 'git@bitbucket.org:dinkarthakur/hpu.git'
 # set :format, :pretty
 
 # Default value for :log_level is :debug
-# set :log_level, :debug
+ set :log_level, :debug
 
 # Default value for :pty is false
 # set :pty, true
