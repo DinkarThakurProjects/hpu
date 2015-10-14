@@ -18,7 +18,7 @@ set :repo_url, 'git@bitbucket.org:dinkarthakur/hpu.git'
 
 # Default value for :log_level is :debug
  set :log_level, :debug
-
+ ssh_options[:forward_agent] = true
 # Default value for :pty is false
 # set :pty, true
 
