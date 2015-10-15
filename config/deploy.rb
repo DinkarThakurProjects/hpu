@@ -1,9 +1,9 @@
 # config valid only for current version of Capistrano
 lock '3.4.0'
 
+set :user, 'hpu'
 set :application, 'hpu'
 set :repo_url, 'git@bitbucket.org:dinkarthakur/hpu.git'
-
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 

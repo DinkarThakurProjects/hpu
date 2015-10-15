@@ -27,6 +27,6 @@ test:
 production:
   <<: *default
   host: localhost
-    database: hpu_production
-    username: hpu
-    password: 'adminhpu'
+  database: hpu_production
+  username: hpu
+  password: adminhpu
