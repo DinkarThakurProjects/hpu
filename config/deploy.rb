@@ -35,13 +35,18 @@ set :repo_url, 'git@bitbucket.org:dinkarthakur/hpu.git'
 # set :keep_releases, 5
 
 namespace :deploy do
-
+  # desc "reload the database with seed data"
+  # task :seed do
+  #   run "cd #{current_path}; bundle exec rake db:seed RAILS_ENV=#{rails_env}"
+  # end
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
       # Here we can do anything such as:
-      # within release_path do
+       within release_path do
+         desc "reload the database with seed data"
       #   execute :rake, 'cache:clear'
-      # end
+           execute :rake, 'db:seed'
+      end
     end
   end
 
