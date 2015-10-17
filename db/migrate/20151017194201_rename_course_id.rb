@@ -1,4 +1,4 @@
-class AddCourseIdToResult < ActiveRecord::Migration
+class RenameCourseId < ActiveRecord::Migration
   def change
     remove_column :results, :course_Id
     remove_column :announcements, :course_Id

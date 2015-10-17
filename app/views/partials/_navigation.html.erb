@@ -1,11 +1,14 @@
 <div class="top-menu">
   <span class="menu"></span>
   <ul class="navig">
-    <li><%= link_to :Home, controller: 'home', action: 'index' %></li>
-    <li class="active"><%= link_to :About,controller: 'home',action: 'about' %></li>
-    <li> <%= link_to "Entrance Result",controller: 'results',action: 'index' %></li>
-    <!--<li><a href="blog.html">Blog</a></li>-->
-    <!--<li><a href="gallery.html">Gallery</a></li>-->
-    <!--<li><a href="contact.html">Contact</a></li>-->
+    <li class="<%= 'active' if params[:controller] == 'home' && params[:action]== 'index'%>">
+      <%= link_to :Home, controller: 'home', action: 'index' %>
+    </li>
+    <li class="<%= 'active' if params[:controller] == 'home' && params[:action]== 'about'%>">
+      <%= link_to :About,controller: 'home',action: 'about' %>
+    </li>
+    <li class="<%= 'active' if params[:controller] == 'results' %>">
+      <%= link_to "Entrance Result",controller: 'results',action: 'index' %>
+    </li>
   </ul>
 </div>

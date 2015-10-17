@@ -42,7 +42,7 @@ RailsAdmin.config do |config|
       field :attachment
       field :slug
       field :is_new
-      field :course_Id, :enum do
+      field :course_id, :enum do
         enum do
           Course.all.collect { |c| [c.course_name, c.id] }
         end
@@ -54,7 +54,7 @@ RailsAdmin.config do |config|
     edit do
       field :heading
       field :description
-      field :course_Id, :enum do
+      field :course_id, :enum do
           enum do
             Course.all.collect { |c| [c.course_name, c.id] }
           end

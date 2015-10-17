@@ -1,0 +1,22 @@
+<%#<div class="grid_info">
+  <div class="blg-pic">
+    <span class="label label-primary btn-circle btn-xl"><i><%=announcements.course.course_name% ></i></span>
+  </div>
+  <div class="blg-pic-info">
+    <!--<h6 style="float: left;"><span class="label label-danger">New</span></h6>-->
+    <h4 style="padding: 0 2%" class="pull-left" ><a href="#">
+      <%= announcements.heading % ></a></h4>
+    <div style="word-wrap: break-word;"><%= truncate_middle(announcements.description, length: 50) % ></div>
+  </div>
+  <div class="clearfix"></div>
+</div>%>
+<div class="grid_info">
+<div class="row">
+  <h6 style="float: left;"><span class="label label-danger">New</span></h6>
+  <h4 style="padding: 0 2%" class="pull-left" ><a href="#">
+    <%= announcements.heading %></a></h4>
+
+  <%#<%= link_to "Download", results.attachment_url, class: "pull-right" %>
+</div>
+<div style="word-wrap: break-word;"><%= truncate_middle(announcements.description, length: 50) %></div>
+  </div>

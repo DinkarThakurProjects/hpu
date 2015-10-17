@@ -49,45 +49,27 @@
     <div class="container">
       <div class="col-md-4 banner-grid">
         <h3>Announcements</h3>
-
         <div class="banner-grid-sec">
-          <div class="grid_info">
-            <div class="blg-pic">
-              <span class="label label-primary btn-circle btn-xl"><i>M.TECH</i></span>
-            </div>
-            <div class="blg-pic-info">
-              <h4><a href="#">Vivamus tempus ligula</a></h4>
-
-              <p>Aliquam sem velit, rhoncus sed arcu at curabitur et erat eu viverra.</p>
-            </div>
-            <div class="clearfix"></div>
-          </div>
-          <div class="grid_info">
-            <div class="blg-pic">
-              <span class="label label-info btn-circle btn-xl"><i>M.TECH</i></span>
-            </div>
-            <div class="blg-pic-info">
-              <h4><a href="#">Vivamus tempus ligula</a></h4>
-
-              <p>Aliquam sem velit, rhoncus sed arcu at curabitur et erat eu viverra.</p>
-            </div>
-            <div class="clearfix"></div>
-          </div>
-
+          <%= render partial: "partials/announcements", collection: Announcement.order("updated_at desc").limit(4) %>
           <div class="more">
             <a href="blog.html">See more from the Blog ></a>
           </div>
         </div>
       </div>
+
       <div class="col-md-4 banner-grid">
         <h3>Entrance
           <Results></Results>
         </h3>
-
         <div class="banner-grid-sec">
           <%= render partial: "partials/results", collection: Result.order("updated_at desc").limit(4) %>
+
+          <div class="more">
+            <%=link_to 'See all results >', controller: 'results', action: 'index'%>
+          </div>
         </div>
       </div>
+
       <div class="col-md-4 banner-grid">
         <h3>For Students</h3>
 
@@ -121,16 +103,16 @@
             are also arranged which contribute to moulding the students' career.</p>
         </div>
         <div class="col-md-4 wel_grid">
-          <img src="assets/w1.jpg" class="img-responsive" alt=""/>
+          <%= image_tag('w1.jpg', class: "img-responsive") %>
           <h5><a href="#">Master of Computer Applications (M.C.A.)</a></h5>
         </div>
         <div class="col-md-4 wel_grid">
-          <img src="assets/w2.jpg" class="img-responsive" alt=""/>
-          <h5><a href="#">Master of Technology (M. Tech.)</a></h5>
+          <%= image_tag('w2.jpg', class: "img-responsive") %>
+          <h5><a href="#">Master of Technology (M.Tech)</a></h5>
         </div>
         <div class="col-md-4 wel_grid">
-          <img src="assets/w4.jpg" class="img-responsive" alt=""/>
-          <h5><a href="#">Doctor of Philosophy (Ph. D.)</a></h5>
+          <%= image_tag('w4.jpg', class: "img-responsive") %>
+          <h5><a href="#">Doctor of Philosophy (Ph.D)</a></h5>
         </div>
         <!--<div class="clearfix"></div>-->
         <!--<div class="more_info">-->
