@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :announcements
   resources :results , only: [:index,:show]
   devise_for :admin
   get '/about'=> 'home#about'

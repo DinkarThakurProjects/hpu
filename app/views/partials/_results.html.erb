@@ -1,9 +1,10 @@
+<div class="news-grid">
+  <div class="row">
+    <h6 style="float: left;"><span class="label label-danger">New</span></h6>
+    <h4 style="padding: 0 2%" class="pull-left" ><a href="#">
+      <%= truncate_middle(results.name, length: 20) %></h4></a>
 
-  <div class="news-grid">
-    <div class="row">
-    <h4><a class="pull-left" href="#">
-      <%= truncate_middle(results.name, length: 20) %></h4><h6><span class="label label-danger">New</span></h6></a>
-      <%= link_to "Download", results.attachment_url, class: "pull-right" %>
-    </div>
-    <div style="word-wrap: break-word;"><%= truncate_middle(results.description, length: 50) %></div>
+    <%= link_to "Download", results.attachment_url, class: "pull-right" %>
   </div>
+  <div style="word-wrap: break-word;"><%= truncate_middle(results.description, length: 50) %></div>
+</div>

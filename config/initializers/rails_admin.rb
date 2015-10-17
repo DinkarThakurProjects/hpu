@@ -20,8 +20,8 @@ RailsAdmin.config do |config|
   ### More at https://github.com/sferik/rails_admin/wiki/Base-configuration
 
   config.actions do
-    dashboard                     # mandatory
-    index                         # mandatory
+    dashboard # mandatory
+    index # mandatory
     new
     export
     bulk_delete
@@ -34,4 +34,32 @@ RailsAdmin.config do |config|
     # history_index
     # history_show
   end
+
+  config.model Result do
+    edit do
+      field :name
+      field :description
+      field :attachment
+      field :slug
+      field :is_new
+      field :course_Id, :enum do
+        enum do
+          Course.all.collect { |c| [c.course_name, c.id] }
+        end
+      end
+    end
+  end
+
+  config.model 'Announcement' do
+    edit do
+      field :heading
+      field :description
+      field :course_Id, :enum do
+          enum do
+            Course.all.collect { |c| [c.course_name, c.id] }
+          end
+      end
+    end
+  end
+
 end
