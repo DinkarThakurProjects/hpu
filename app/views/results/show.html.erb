@@ -1,18 +1,20 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @result.name %>
-</p>
+ <h2 class="alert-info alert"> <%= @result.name %> </h2>
 <br>
-<p>
-  <strong>Description:</strong>
+
+  <h3 class="label label-success">Description:</h3>
+<p  style="padding: 1em">
   <%= @result.description %>
 </p>
 <br>
 <p>
-  <strong>Attachment:</strong>
-  <%= link_to "Download", @result.attachment_url %>
+  <label class="label label-info">Attachment:</label>
+  <%= if !@result.attachment_url.blank?
+        link_to "Download", @result.attachment_url
+      else
+        "No attachement"
+      end %>
 </p>
 <br>
 <%= link_to 'Back', results_path %>

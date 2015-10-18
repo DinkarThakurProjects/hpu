@@ -8,7 +8,10 @@
       <%= link_to :About,controller: 'home',action: 'about' %>
     </li>
     <li class="<%= 'active' if params[:controller] == 'results' %>">
-      <%= link_to "Entrance Result",controller: 'results',action: 'index' %>
+      <%= link_to "Results",controller: 'results' %>
+    </li>
+    <li class="<%= 'active' if params[:controller] == 'announcements' %>">
+      <%= link_to "Annoucements",controller: 'announcements' %>
     </li>
   </ul>
 </div>

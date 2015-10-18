@@ -54,6 +54,7 @@ RailsAdmin.config do |config|
     edit do
       field :heading
       field :description
+      field :attachment
       field :course_id, :enum do
           enum do
             Course.all.collect { |c| [c.course_name, c.id] }

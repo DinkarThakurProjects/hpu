@@ -1,10 +1,10 @@
 class AnnouncementsController < ApplicationController
   before_action :set_announcement, only: [:show, :edit, :update, :destroy]
-
+  layout('common')
   # GET /announcements
   # GET /announcements.json
   def index
-    @announcements = Announcement.all
+    @announcements = Announcement.all.order(:updated_at).reverse_order
   end
 
   # GET /announcements/1
@@ -69,6 +69,6 @@ class AnnouncementsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def announcement_params
-      params.require(:announcement).permit(:heading, :description)
+      params.require(:announcement).permit(:heading, :description,:attachment)
     end
 end

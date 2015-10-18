@@ -18,10 +18,15 @@
   <tbody style="vertical-align:middle;">
   <% @results.each do |result| %>
       <tr>
-        <td width="8%"><span class="label label-info btn-circle btn-xl small"><i>M.TECH</i></span></td>
+        <td width="8%"> <span class="label label-info btn-circle btn-xl small">
+            <i>
+              <%=  (!result.course.blank?) ? result.course.course_name : "General"%>
+            </i>
+          </span></td>
         <td width="21%"><%= truncate_middle(result.name,length:50) %></td>
         <td width="55%"><%= truncate_middle(result.description,length: 255) %></td>
-        <td width="8%"><%= link_to "Download", result.attachment_url %></td>
+        <td width="8%"><%= if !result.attachment_url.blank?
+                             link_to "Download", result.attachment_url end %></td>
         <td width="8%"><%= link_to 'Show', result %></td>
         </td>
       </tr>

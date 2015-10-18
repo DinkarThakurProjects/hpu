@@ -43,9 +43,9 @@ namespace :deploy do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
       # Here we can do anything such as:
        within release_path do
-         desc "reload the database with seed data"
+      #   desc "reload the database with seed data"
       #   execute :rake, 'cache:clear'
-           execute :rake, 'db:seed'
+       #   execute :rake, 'db:seed RAILS_ENV=production'
       end
     end
   end

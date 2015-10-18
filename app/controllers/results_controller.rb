@@ -4,7 +4,7 @@ class ResultsController < ApplicationController
   # GET /results
   # GET /results.json
   def index
-    @results = Result.all
+    @results = Result.all.order(:updated_at).reverse_order
   end
 
   # GET /results/1

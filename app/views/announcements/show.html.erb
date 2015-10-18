@@ -1,14 +1,23 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Heading:</strong>
-  <%= @announcement.heading %>
-</p>
+<h2 class="alert-info alert"> <%=@announcement.heading  %> </h2>
+<br>
 
-<p>
-  <strong>Description:</strong>
-  <%= @announcement.description %>
+<h3 class="label label-success">Description:</h3>
+<p  style="padding: 1em">
+  <%=  @announcement.description  %>
 </p>
-
-<%= link_to 'Edit', edit_announcement_path(@announcement) %> |
+<br>
+<p>
+  <label class="label label-info">Attachment:</label>
+  <%= if !@announcement.attachment_url.blank?
+        link_to "Download", @announcement.attachment_url
+      else
+        "No attachement"
+      end %>
+</p>
+<br>
 <%= link_to 'Back', announcements_path %>
+
+
+
