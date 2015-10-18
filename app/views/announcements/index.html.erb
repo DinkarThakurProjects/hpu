@@ -4,7 +4,7 @@
     </div>
 <% end %>
 <br>
-<h2 class="top">Announcements</h2>
+<h2 class="top">Announcements<%= "<small class='text-danger'> No Announcement to Display</small>".html_safe if @announcements.blank?  %></h2>
 <table class="table table-striped">
   <thead>
   <tr>

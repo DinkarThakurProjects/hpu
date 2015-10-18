@@ -4,7 +4,7 @@
     </div>
 <% end %>
 <br>
-<h2 class="top">Results List</h2>
+<h2 class="top">Results List<%= "<small class='text-danger'> No Result to Display</small>".html_safe if @results.blank?  %></h2>
 <table class="table table-striped">
   <thead>
   <tr>

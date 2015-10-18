@@ -17,6 +17,7 @@
       <a href="/">
         <%= image_tag('logo.jpg') %>
       </a>
+      <label class="label" style="font-size: .8em">DEPARTMENT OF COMPUTER SCIENCE. HPU SHIMLA CAMPUS</label>
     </div>
     <%= render 'partials/navigation' %>
     <!-- script-for-menu -->
@@ -37,7 +38,7 @@
           <ul class="rslides" id="slider">
             <li><h3>Nurturing the students of yesterday into resolute builders of the future</h3></li>
             <li><h3>To make the forthcoming generations aware of computer education</h3></li>
-            <li><h3>Impart technical as well as interpersonal skills to the students.</h3></li>
+            <li><h3>Impart technical as well as interpersonal skills to the students</h3></li>
           </ul>
           <div class="clearfix"></div>
         </div>
@@ -47,24 +48,39 @@
   <div class="banner-grids">
     <div class="container">
       <div class="col-md-4 banner-grid">
-        <h3>Announcements</h3>
+        <h3>Announcements
+          <small class='label label-see-all pull-right'>
+            <%= link_to 'See all', controller: 'announcements', action: 'index'%>
+          </small>
+        </h3>
         <div class="banner-grid-sec">
-          <%= render partial: "partials/announcements", collection: Announcement.order("updated_at desc").limit(4) %>
-          <div class="more">
-            <%=link_to 'See all announcements >', controller: 'announcements', action: 'index'%>
-          </div>
+          <%= if Announcement.count > 0
+                render partial: "partials/announcements", collection: Announcement.order("updated_at desc").limit(4)
+              else
+                "<h4 class='text-danger'>No new announcements</h4>".html_safe
+              end
+          %>
         </div>
       </div>
 
       <div class="col-md-4 banner-grid">
-        <h3>Entrance
-          <Results></Results>
+        <h3>    Results
+          <small class='label label-see-all pull-right'>
+            <%= link_to 'See all', controller: 'results', action: 'index' %>
+          </small>
+
         </h3>
+
         <div class="banner-grid-sec">
-          <%= render partial: "partials/results", collection: Result.order("updated_at desc").limit(4) %>
+          <%= if Result.count > 0
+           render partial: "partials/results", collection: Result.order("updated_at desc").limit(4)
+          else
+               "<h4 class='text-danger'>No new result</h4>".html_safe
+          end
+          %>
 
           <div class="more">
-            <%=link_to 'See all results >', controller: 'results', action: 'index'%>
+
           </div>
         </div>
       </div>
@@ -74,7 +90,7 @@
 
         <div class="banner-grid-sec news_sec">
           <div class="news-ltr">
-            <h4><a href="#">No new notification</a></h4>
+            <h4 class="text-danger">No new notification</h4>
 
             <p></p>
           </div>
@@ -118,7 +134,8 @@
         <h3>Quotes</h3>
 
         <div class="testimnl-grid">
-          <p>Education is the best friend. An educated person is respected everywhere. Education beats the beauty and the youth.</p>
+          <p>Education is the best friend. An educated person is respected everywhere. Education beats the beauty and
+            the youth.</p>
           <h5>Chanakya</h5>
         </div>
         <div class="testimnl-grid">
