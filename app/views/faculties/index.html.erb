@@ -6,6 +6,8 @@
 <br>
 <h2 class="top">Faculty<%= "<small class='text-danger'> No Faculty to Display</small>".html_safe if @faculties.blank?  %></h2>
 
+
+
 <table class="table table-striped">
   <thead>
   <tr>
@@ -23,7 +25,7 @@
                              </td>
         <td width="25%" style="word-wrap: break-word">
           <% if faculty.is_chairman %>
-              <span class="label label-info btn-circle btn-xl small"></span>
+              <span class="label label-info btn-circle btn-xl small">Chairman</span>
           <% end %>
           <%= faculty.name %>
         </td>
