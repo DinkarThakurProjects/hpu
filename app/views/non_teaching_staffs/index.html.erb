@@ -19,7 +19,6 @@
   <tbody style="vertical-align:middle;">
   <% @non_teaching_staffs.each do |non_teaching_staff| %>
     <% if non_teaching_staff.is_technical %>
-    <span class="label label-info">Technical Staff</span>
       <tr>
         <td width="15%"><%= image_tag non_teaching_staff.image_path.url(:thumb),class: "img-circle" , alt: non_teaching_staff.name,
                                       title: non_teaching_staff.name  %>
@@ -30,7 +29,6 @@
         <td width="30%" style="word-wrap: break-word"><%= non_teaching_staff.joined_in %></td>
       </tr>
     <% else %>
-          <span class="label label-info">Support Staff</span>
           <tr>
             <td width="15%"><%= image_tag non_teaching_staff.image_path.url(:thumb),class: "img-circle" , alt: non_teaching_staff.name,
                                           title: non_teaching_staff.name  %>
