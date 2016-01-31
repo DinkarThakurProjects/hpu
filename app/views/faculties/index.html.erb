@@ -1,0 +1,37 @@
+<% if !flash[:notice].blank? %>
+    <div class="alert alert-info">
+      <p id="notice"><%= notice %></p>
+    </div>
+<% end %>
+<br>
+<h2 class="top">Faculty<%= "<small class='text-danger'> No Faculty to Display</small>".html_safe if @faculties.blank?  %></h2>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th></th>
+    <th>Name</th>
+    <th>Qualification</th>
+    <th>Joined year</th>
+    <th>Total experience</th>
+  </tr>
+  </thead>
+  <tbody style="vertical-align:middle;">
+  <% @faculties.each do |faculty| %>
+      <tr>
+        <td width="15%"><%= image_tag faculty.image_path.url(:thumb),class: "img-circle" , alt: faculty.name, title: faculty.name  %>
+                             </td>
+        <td width="25%" style="word-wrap: break-word">
+          <% if faculty.is_chairman %>
+              <span class="label label-info btn-circle btn-xl small"></span>
+          <% end %>
+          <%= faculty.name %>
+        </td>
+        <td width="30%" style="word-wrap: break-word"><%= faculty.qualification %></td>
+        <td width="15%" style="word-wrap: break-word"><%= faculty.joined_year %></td>
+        <td width="15%" style="word-wrap: break-word"><%= faculty.total_experience %> years</td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+<br>

@@ -173,6 +173,7 @@ GEM
     remotipart (1.2.1)
     responders (2.1.0)
       railties (>= 4.2.0, < 5)
+    rmagick (2.15.4)
     safe_yaml (1.0.4)
     sass (3.4.19)
     sass-rails (5.0.4)
@@ -235,6 +236,7 @@ DEPENDENCIES
   mysql2
   rails (= 4.2.3)
   rails_admin
+  rmagick
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
   spring
@@ -244,4 +246,4 @@ DEPENDENCIES
   web-console (~> 2.0)
 
 BUNDLED WITH
-   1.10.6
+   1.11.0

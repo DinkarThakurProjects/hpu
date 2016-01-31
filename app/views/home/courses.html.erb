@@ -1,0 +1,45 @@
+<% if !flash[:notice].blank? %>
+    <div class="alert alert-info">
+      <p id="notice"><%= notice %></p>
+    </div>
+<% end %>
+<br>
+<h2 class="top">Courses<%= "<small class='text-danger'> No Course to Display</small>".html_safe if @courses.blank? %></h2>
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th>Course</th>
+    <th>Syllabus</th>
+    <th>Results</th>
+    <th>Annoucements</th>
+
+  </tr>
+  </thead>
+  <tbody style="vertical-align:middle;">
+  <% @courses.each do |course| %>
+      <tr>
+        <td width="20%">
+          <span class="label label-info">
+            <i>
+              <%= course.course_name %>
+            </i>
+          </span>
+        </td>
+        <td width="20%"><%= if !course.syllabus_url.blank?
+                              link_to "Download", course.syllabus_url end %></td>
+        <td width="30%" style="word-wrap: break-word">
+          <% course.results.each do |result| %>
+              <%= link_to result.name, result %>
+          <% end %>
+        </td>
+        <td width="30%" style="word-wrap: break-word">
+          <% course.announcement.each do |announcment| %>
+              <%= link_to announcment.name, announcment %>
+          <% end %>
+        </td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+<br>
+

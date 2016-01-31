@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151017202116) do
+ActiveRecord::Schema.define(version: 20160131132523) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -44,6 +44,19 @@ ActiveRecord::Schema.define(version: 20151017202116) do
     t.string   "course_name", limit: 255
     t.datetime "created_at",              null: false
     t.datetime "updated_at",              null: false
+    t.string   "syllabus",    limit: 255
+  end
+
+  create_table "faculties", force: :cascade do |t|
+    t.string   "name",             limit: 255
+    t.string   "image_path",       limit: 255
+    t.string   "qualification",    limit: 255
+    t.integer  "joined_year",      limit: 4
+    t.integer  "total_experience", limit: 4
+    t.boolean  "is_chairman"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.boolean  "is_teaching"
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -59,14 +72,26 @@ ActiveRecord::Schema.define(version: 20151017202116) do
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
 
+  create_table "non_teaching_staffs", force: :cascade do |t|
+    t.string   "name",          limit: 255
+    t.string   "image_path",    limit: 255
+    t.string   "designation",   limit: 255
+    t.string   "qualification", limit: 255
+    t.integer  "joined_in",     limit: 4
+    t.boolean  "is_technical"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
   create_table "results", force: :cascade do |t|
     t.string   "name",        limit: 255
     t.text     "description", limit: 65535
     t.string   "attachment",  limit: 255
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.datetime "created_at",                                null: false
+    t.datetime "updated_at",                                null: false
     t.string   "slug",        limit: 255
     t.boolean  "is_new"
+    t.string   "course_name", limit: 6,     default: "MCA"
     t.integer  "course_id",   limit: 4
   end
 

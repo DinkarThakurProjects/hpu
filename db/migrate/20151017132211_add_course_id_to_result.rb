@@ -1,7 +1,13 @@
 class AddCourseIdToResult < ActiveRecord::Migration
   def change
-    remove_column :results, :course_Id
-    remove_column :announcements, :course_Id
+
+    if column_exists? :results, :course_Id
+     remove_column :results, :course_Id
+    end
+    if column_exists? :announcements, :course_Id
+      remove_column :announcements, :course_Id
+    end
+
     unless column_exists? :results, :course_id
       add_column :results, :course_id, :integer
     end

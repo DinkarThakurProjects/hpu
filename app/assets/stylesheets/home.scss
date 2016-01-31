@@ -25,6 +25,10 @@ p {
 }
 
 //my css
+
+.w100p{
+  width: 100%;
+}
 .margin-right-10 {
   margin-right: 10px;
 }
@@ -80,6 +84,14 @@ th {
   height: 200px;
   width: 100%;
   padding: 0 15px;
+}
+.dropdown-menu {
+  background-color: #4DC47D;
+}
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+  text-decoration: none;
+  color: #262626;
+  background-color: #4dc47d;
 }
 
 //

@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @faculty.name %>
+</p>
+
+<p>
+  <strong>Image path:</strong>
+  <%= @faculty.image_path %>
+</p>
+
+<p>
+  <strong>Qualification:</strong>
+  <%= @faculty.qualification %>
+</p>
+
+<p>
+  <strong>Joined year:</strong>
+  <%= @faculty.joined_year %>
+</p>
+
+<p>
+  <strong>Total experience:</strong>
+  <%= @faculty.total_experience %>
+</p>
+
+<p>
+  <strong>Is chairman:</strong>
+  <%= @faculty.is_chairman %>
+</p>
+
+<%= link_to 'Edit', edit_faculty_path(@faculty) %> |
+<%= link_to 'Back', faculties_path %>

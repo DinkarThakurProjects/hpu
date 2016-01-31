@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
+  resources :non_teaching_staffs
+  resources :faculties
   resources :announcements
   resources :results , only: [:index,:show]
   devise_for :admin
-  get '/about'=> 'home#about'
+  get '/department'=> 'home#department'
+  get '/message'=> 'home#chairman_message'
+  get '/courses'=> 'home#courses'
   root to: "home#index"
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 

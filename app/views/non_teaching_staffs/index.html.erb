@@ -1,0 +1,48 @@
+<% if !flash[:notice].blank? %>
+    <div class="alert alert-info">
+      <p id="notice"><%= notice %></p>
+    </div>
+<% end %>
+<br>
+<h2 class="top">Non Teaching Staff <%= "<small class='text-danger'> No Non-Teaching Staff to Display</small>".html_safe if @faculties.blank?  %></h2>
+
+<table class="table table-striped">
+  <thead>
+  <tr>
+    <th></th>
+    <th>Name</th>
+    <th>Designation</th>
+    <th>Qualification</th>
+    <th>Joined year</th>
+  </tr>
+  </thead>
+  <tbody style="vertical-align:middle;">
+  <% @non_teaching_staffs.each do |non_teaching_staff| %>
+    <% if non_teaching_staff.is_technical %>
+    <span class="label label-info">Technical Staff</span>
+      <tr>
+        <td width="15%"><%= image_tag non_teaching_staff.image_path.url(:thumb),class: "img-circle" , alt: non_teaching_staff.name,
+                                      title: non_teaching_staff.name  %>
+        </td>
+        <td width="30%" style="word-wrap: break-word"><%= non_teaching_staff.name %></td>
+        <td width="30%" style="word-wrap: break-word"><%= non_teaching_staff.designation %></td>
+        <td width="30%" style="word-wrap: break-word"><%= non_teaching_staff.qualification %></td>
+        <td width="30%" style="word-wrap: break-word"><%= non_teaching_staff.joined_in %></td>
+      </tr>
+    <% else %>
+          <span class="label label-info">Support Staff</span>
+          <tr>
+            <td width="15%"><%= image_tag non_teaching_staff.image_path.url(:thumb),class: "img-circle" , alt: non_teaching_staff.name,
+                                          title: non_teaching_staff.name  %>
+            </td>
+            <td width="30%" style="word-wrap: break-word"><%= non_teaching_staff.name %></td>
+            <td width="30%" style="word-wrap: break-word"><%= non_teaching_staff.designation %></td>
+            <td width="30%" style="word-wrap: break-word"><%= non_teaching_staff.qualification %></td>
+            <td width="30%" style="word-wrap: break-word"><%= non_teaching_staff.joined_in %></td>
+          </tr>
+    <% end %>
+  <% end %>
+  </tbody>
+</table>
+<br>
+

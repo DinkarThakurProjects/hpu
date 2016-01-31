@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @non_teaching_staff.name %>
+</p>
+
+<p>
+  <strong>Image path:</strong>
+  <%= @non_teaching_staff.image_path %>
+</p>
+
+<p>
+  <strong>Designation:</strong>
+  <%= @non_teaching_staff.designation %>
+</p>
+
+<p>
+  <strong>Qualification:</strong>
+  <%= @non_teaching_staff.qualification %>
+</p>
+
+<p>
+  <strong>Joined in:</strong>
+  <%= @non_teaching_staff.joined_in %>
+</p>
+
+<p>
+  <strong>Is technical:</strong>
+  <%= @non_teaching_staff.is_technical %>
+</p>
+
+<%= link_to 'Edit', edit_non_teaching_staff_path(@non_teaching_staff) %> |
+<%= link_to 'Back', non_teaching_staffs_path %>

@@ -38,6 +38,7 @@ gem 'mysql2'
 gem 'devise'
 gem 'rails_admin'
 gem 'carrierwave'
+gem "rmagick"
 gem 'friendly_id', '~> 5.1.0'
 
 

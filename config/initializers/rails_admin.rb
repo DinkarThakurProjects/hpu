@@ -63,4 +63,27 @@ RailsAdmin.config do |config|
     end
   end
 
+  config.model Faculty do
+    edit do
+      field :name
+      field :image_path
+      field :qualification
+      field :is_teaching
+      field :joined_year
+      field :total_experience
+      field :is_chairman
+    end
+  end
+
+  config.model NonTeachingStaff do
+    edit do
+      field :name
+      field :image_path
+      field :qualification
+      field :designation
+      field :is_technical
+      field :joined_in
+    end
+  end
+
 end
