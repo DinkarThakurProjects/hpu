@@ -24,5 +24,6 @@ module Hpu
     config.active_record.raise_in_transactional_callbacks = true
     config.assets.enabled = true
     config.assets.paths << Rails.root.join("app", "assets", "fonts")
+    config.autoload_paths += "#{Rails.root}/app/uploaders"
   end
 end
