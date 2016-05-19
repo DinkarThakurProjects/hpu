@@ -40,13 +40,13 @@
 # limited set of options, consult the Net::SSH documentation.
 # http://net-ssh.github.io/net-ssh/classes/Net/SSH.html#method-c-start
 #
-# Global options
-# --------------
-#  set :ssh_options, {
-#    keys: %w(/home/rlisowski/.ssh/id_rsa),
-#    forward_agent: false,
-#    auth_methods: %w(password)
-#  }
+Global options
+--------------
+ set :ssh_options, {
+   keys: %w(~/.ssh/id_rsa),
+   forward_agent: true,
+   #auth_methods: %w(password)
+ }
 #
 # The server-based syntax can be used to override options:
 # ------------------------------------
