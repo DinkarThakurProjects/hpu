@@ -2,7 +2,8 @@
   <div class="row">
     <h6 style="float: left;"><span class="label label-danger">New</span></h6>
     <h4 style="padding: 0 2%;width: 65%;" class="pull-left">
-    <a href="#"> <%= announcements.heading %></a></h4>
+    <%=  link_to announcements.heading, announcements %>
+    </h4>
     <%= if !announcements.attachment_url.blank?
           link_to "Download", announcements.attachment_url, class: "pull-right"
         end %>
