@@ -50,7 +50,7 @@ group :development, :test do
   gem 'capistrano-rvm'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-
+  gem 'capistrano-ssh-doctor', '~> 1.0'
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
 

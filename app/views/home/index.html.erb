@@ -54,12 +54,14 @@
           </small>
         </h3>
         <div class="banner-grid-sec">
+        <marquee direction="up" scrollamount="3" height="250px">
           <%= if Announcement.count > 0
-                render partial: "partials/announcements", collection: Announcement.order("updated_at desc").limit(4)
+                render partial: "partials/announcements", collection: Announcement.order("updated_at desc")
               else
                 "<h4 class='text-danger'>No new announcements</h4>".html_safe
               end
           %>
+          </marquee>
         </div>
       </div>
 
