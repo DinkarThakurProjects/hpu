@@ -54,7 +54,7 @@
           </small>
         </h3>
         <div class="banner-grid-sec">
-        <marquee direction="up" scrollamount="3" height="250px">
+        <marquee direction="up" scrollamount="3" height="250px" onmouseover="this.stop();" onmouseout="this.start();">
           <%= if Announcement.count > 0
                 render partial: "partials/announcements", collection: Announcement.order("updated_at desc")
               else
