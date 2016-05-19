@@ -40,8 +40,8 @@
 # limited set of options, consult the Net::SSH documentation.
 # http://net-ssh.github.io/net-ssh/classes/Net/SSH.html#method-c-start
 #
-Global options
---------------
+#Global options
+#--------------
  set :ssh_options, {
    keys: %w(~/.ssh/id_rsa),
    forward_agent: true
