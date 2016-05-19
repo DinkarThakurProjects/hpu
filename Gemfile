@@ -34,7 +34,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'bootstrap-sass', '~> 3.3.5'
 gem 'autoprefixer-rails'
-gem 'mysql2'
+gem 'mysql2', '~> 0.3.18'
 gem 'devise'
 gem 'rails_admin'
 gem 'carrierwave'
