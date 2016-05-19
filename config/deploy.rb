@@ -4,7 +4,7 @@ lock '3.4.0'
 set :user, 'hpu'
 set :application, 'hpu'
 #set :repo_url, 'https://dinkarthakur@bitbucket.org/dinkarthakur/hpu.git'
-set :repo_url, 'ssh://git@bitbucket.org:dinkarthakur/hpu.git'
+set :repo_url, 'git@bitbucket.org:dinkarthakur/hpu.git'
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 
