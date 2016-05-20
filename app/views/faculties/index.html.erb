@@ -10,12 +10,13 @@
 
 <table class="table table-striped">
   <thead>
-  <tr>
+  <tr style="font-weight: bold;">
     <th></th>
     <th>Name</th>
     <th>Qualification</th>
     <th>Joined year</th>
     <th>Total experience</th>
+    <th>Resume</th>
   </tr>
   </thead>
   <tbody style="vertical-align:middle;">
@@ -30,8 +31,11 @@
           <%= faculty.name %>
         </td>
         <td width="30%" style="word-wrap: break-word"><%= faculty.qualification %></td>
-        <td width="15%" style="word-wrap: break-word"><%= faculty.joined_year %></td>
-        <td width="15%" style="word-wrap: break-word"><%= faculty.total_experience %> years</td>
+        <td width="10%" style="word-wrap: break-word"><%= faculty.joined_year %></td>
+        <td width="10%" style="word-wrap: break-word"><%= faculty.total_experience %> years</td>
+        <td width="10%"><%= if !faculty.attachment_url.blank?
+                             link_to "View Resume", faculty.attachment_url
+                           end %></td>
       </tr>
   <% end %>
   </tbody>

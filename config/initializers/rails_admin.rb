@@ -72,6 +72,7 @@ RailsAdmin.config do |config|
       field :joined_year
       field :total_experience
       field :is_chairman
+      field :attachment
     end
   end
 

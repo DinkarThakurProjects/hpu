@@ -69,6 +69,6 @@ class FacultiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def faculty_params
-      params.require(:faculty).permit(:name, :image_path, :qualification, :joined_year, :total_experience, :is_chairman)
+      params.require(:faculty).permit(:name, :image_path, :qualification, :joined_year, :total_experience, :is_chairman, :attachment)
     end
 end
