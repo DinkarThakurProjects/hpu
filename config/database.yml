@@ -10,11 +10,8 @@ default: &default
   timeout: 5000
 
 development:
-  <<: *default
-  host: localhost
-  database: hpu_development
-  username: root
-  password: ''
+  url: <%= ENV["DATABASE_URL"] %>
+  
   #database: db/development.sqlite3
 
 # Warning: The database defined as "test" will be erased and
